@@ -1,14 +1,17 @@
 import React from 'react';
 import TodoItem from './components/TodoItem';
-function App(){
-  
-  return(
-    <div className="todo-list">
-      <TodoItem label="Palce Holder Text 1"/>
-      <TodoItem label="Palce Holder Text 1"/>
-      <TodoItem label="Palce Holder Text 1"/>
-      <TodoItem label="Palce Holder Text 1"/>
-    </div>
-  );
+
+class App extends React.Component{
+  constructor(){
+      super();
+      this.state={
+        answer:"Yes"
+      }
+  }
+  render(){
+    return(<div>
+      <h1>Something !! {this.state.answer}</h1>
+    </div>);
+  }
 }
 export default App;
