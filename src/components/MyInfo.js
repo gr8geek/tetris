@@ -1,7 +1,7 @@
 import React from 'react';
-const MyInfo=({age,name})=>{
+const MyInfo=({age,name,className})=>{
     return(
-      <div>
+      <div className={className}>
         <h1>My Name is {name}</h1>
     <p>A simple geek on oval blue planet of age {age}</p>
       <ol>
