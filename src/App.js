@@ -1,13 +1,19 @@
 import React from 'react';
 import Joke from './components/Joke';
+import jokeData from './components/jokeData';
 function App(){
+  const nums =[1,2,3,4,5,6,7,8,9,10];
+  const doubled=nums.map((num)=> num*2);
+  console.log("new array=",doubled);
+  const JokeList=jokeData.map((joke)=>{
+    return(
+      <Joke key={joke.id} quest={joke.quest} punch={joke.punch}/>
+    );
+  });
+
   return(
     <div>
-      <Joke quest="Why was apple invisible on red table" punch="Becuse it was camoflaged"/>
-  <Joke quest="Why did hindi chini bhai bhai failed" punch="Becuse chini backstabbed in 1962"/>
-  <Joke quest="Why is 1/0 not defined"  punch="You know it better .. try solving it"/>
-  <Joke quest="Why is sun like Sun" punch="Why are you like you"/>
-  <Joke quest="Why is milk white"/>
+      {JokeList}
     </div>
   );
 }
