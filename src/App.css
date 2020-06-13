@@ -40,3 +40,7 @@ body{
   font-family: Roboto, sans-serif;
   font-weight: 100;
 }
+.border{
+  border-color: #12af41;
+  border-width: 4px;
+}

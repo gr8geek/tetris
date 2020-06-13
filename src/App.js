@@ -1,16 +1,14 @@
 import React from 'react';
-import TodoItem from './components/TodoItem';
-import Header from './components/Header';
-import MainContent from './components/MainContent';
-const App=()=>{
+import Joke from './components/Joke';
+function App(){
   return(
-    <div className="todo-list">
-      
-      <TodoItem label="Task 1"/>
-      <TodoItem label="Task 2"/>
-      <TodoItem label="Task 3"/>
+    <div>
+      <Joke quest="Why was apple invisible on red table" punch="Becuse it was camoflaged"/>
+  <Joke quest="Why did hindi chini bhai bhai failed" punch="Becuse chini backstabbed in 1962"/>
+  <Joke quest="Why is 1/0 not defined"  punch="You know it better .. try solving it"/>
+  <Joke quest="Why is sun like Sun" punch="Why are you like you"/>
+  <Joke quest="Why is milk white"/>
     </div>
   );
 }
 export default App;
-
