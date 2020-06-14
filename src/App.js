@@ -1,22 +1,39 @@
 import React ,{Component} from 'react';
 import tododata from './components/tododata';
 import TodoItem from './components/TodoItem';
+
 class App extends Component{
-  constructor(){
-    super()
+  constructor(props){
+    super(props);
     this.state={
-      todo:tododata
+      todo:tododata,
     };
+    this.handleChange =this.handleChange.bind(this)
+  }
+  handleChange(id){
+    console.log("Changed",id);
+    this.setState(prevState =>{
+      const updatedTodos = prevState.todo.map(todo=>{
+        if(todo.id == id){
+          todo.data=!todo.data
+        }
+        return todo
+      })
+      return {
+        todo: updatedTodos
+      }
+    })
+
   }
   render(){
-   var tododisp= this.state.todo.map((data)=>{
+    const todolist=this.state.todo.map((todo)=>{
       return(
-        <TodoItem id={data.id} text={data.text}/>
-      );
-    });
+        <TodoItem id={todo.id} text={todo.text} handleChange={this.handleChange}/>
+      )
+    })
     return(
      <div>
-       {tododisp}
+       {todolist}
      </div>
     );
   }
