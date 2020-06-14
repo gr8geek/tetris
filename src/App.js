@@ -1,17 +1,20 @@
-import React from 'react';
-import TodoItem from './components/TodoItem';
-
-class App extends React.Component{
+import React ,{Component} from 'react';
+class App extends Component{
   constructor(){
-      super();
-      this.state={
-        answer:"Yes"
-      }
+    super()
+    this.state={
+      name:"Pratyush",
+      age:20,
+
+    };
   }
   render(){
-    return(<div>
-      <h1>Something !! {this.state.answer}</h1>
-    </div>);
+    return(
+      <div>
+        <h4>Name:{this.state.name}</h4>
+        <h6>Age:{this.state.age}</h6>
+      </div>
+    );
   }
 }
 export default App;
