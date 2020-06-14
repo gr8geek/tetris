@@ -1,19 +1,23 @@
 import React ,{Component} from 'react';
+import tododata from './components/tododata';
+import TodoItem from './components/TodoItem';
 class App extends Component{
   constructor(){
     super()
     this.state={
-      name:"Pratyush",
-      age:20,
-
+      todo:tododata
     };
   }
   render(){
+   var tododisp= this.state.todo.map((data)=>{
+      return(
+        <TodoItem id={data.id} text={data.text}/>
+      );
+    });
     return(
-      <div>
-        <h4>Name:{this.state.name}</h4>
-        <h6>Age:{this.state.age}</h6>
-      </div>
+     <div>
+       {tododisp}
+     </div>
     );
   }
 }

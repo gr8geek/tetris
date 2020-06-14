@@ -1,9 +1,9 @@
 import React from 'react';
-function TodoItem({label}){
+function TodoItem({id,text}){
     return(
         <div className="todo-item">
-            <input type="checkbox" id={label} name={label}></input>
-            <label for={label}>{label}</label>
+            <input type="checkbox" id={id} name={text}></input>
+            <label for={text}>{text}</label>
         </div>           
     );
 }
