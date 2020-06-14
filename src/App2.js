@@ -5,20 +5,25 @@ class App2 extends Component{
     constructor(){
         super();
         this.state={
-            isLoading:true
+            log:false,
         }
+        this.clickedlog=this.clickedlog.bind(this)
     }
-    componentDidMount(){
-        setTimeout(()=>{
-            this.setState({
-                isLoading:false
-            })
-        },1500)
+    clickedlog(){
+        this.setState((prev)=>{
+            return(
+                {
+                    log:!prev.log,
+                }
+            )
+        })
     }
     render(){
         return(
             <div>
-                <Coditional isLoading={this.state.isLoading}/>
+                <Coditional onclk={this.clickedlog} st={this.state.log}/>
+                <h1>You are {this.state.log ? "Logged in" : "Logged out"}</h1>
+                
             </div>
         )
         

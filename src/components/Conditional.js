@@ -4,20 +4,14 @@ class Conditional extends Component{
         super(props);
     }
     render(){
-        if(!this.props.isLoading){
-            return(
-                <div>
-                    <h1>Loaded!</h1>
-                </div>
-            )
-        }
-        else{
-            return(
-                <div>
-                    <h1>Loading.....</h1>
-                </div>
-            )
-        }
+        return(
+            <div>
+                <button onClick={this.props.onclk} name="button">
+                {this.props.st ? "Log out": "Log in"}
+                </button>
+                
+            </div>
+        )
     }
 }
 export default Conditional;
